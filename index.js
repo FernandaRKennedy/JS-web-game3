@@ -7,8 +7,28 @@ function newImage(url, left, bottom){
     document.body.append(image)
     return image
 }
+function move(image){//defining a new function 
+    image.style.position = 'fixed' // adding positions 
+  
+    function moveToCoordinates(left, bottom){//defining the function in move 
+        image.style.left = left + 'px'
+        image.style.bottom = bottom + 'px'
+    }
+    return{
+        to: moveToCoordinates// defines an object in move //to: gives the object a property
+    }
+ }
+ move(newImage('assets/green-character.gif')).to(100, 250)
 
-newImage('assets/green-character.gif', 100, 250)
+
+// let thingThatMoveReturns = move(greenCharacter)
+// thingThatMoveReturns.to
+// thingThatMoveReturns.to(300,300)
+
+
+
+
+
 newImage('assets/tree.png', 200, 450)
 newImage('assets/pillar.png', 350, 250)
 newImage('assets/pine-tree.png', 450, 350)
